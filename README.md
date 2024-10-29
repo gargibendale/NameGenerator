@@ -41,3 +41,7 @@ This will be divided into batches of 32 with each block embedded into a vector o
 
 While making predictions, the algorithm will initialize a block of size 8 with all dots, and continuously shift the context window over the block to predict the next character. During prediction, the algorithm will sample continuously from the distribution of probabilities obtained from the model for each context and stop when the next character is a dot (".") to indicate the end of the name, resulting in names of varying lengths, not just 8 characters. 
 
+### Results:
+
+![Screenshot 2024-10-29 121954](https://github.com/user-attachments/assets/7d5373f4-1eee-40a7-92cf-9ffa0edd58fa)
+
