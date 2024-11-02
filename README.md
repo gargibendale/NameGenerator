@@ -36,10 +36,6 @@ Tanh : (32, 128)
 
 Linear : (32, 27)
 
-The list of names is first converted into blocks of 8 consecutive characters, which will predict the 9th character. This results into a 505323 * 8 matrix of characters.
-This will be divided into batches of 32 with each block embedded into a vector of length 24, resulting in a Embedding layer of (32, 8, 24). This is passed into subsequent layers to give the final output of (32, 27) which will contain the predicted embeddings for each block in the blocksize, on which softmax will be applied to get the next character. 
-
-While making predictions, the algorithm will initialize a block of size 8 with all dots, and continuously shift the context window over the block to predict the next character. During prediction, the algorithm will sample continuously from the distribution of probabilities obtained from the model for each context and stop when the next character is a dot (".") to indicate the end of the name, resulting in names of varying lengths, not just 8 characters. 
 
 ### Results:
 
